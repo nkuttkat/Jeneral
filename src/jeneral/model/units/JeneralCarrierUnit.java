@@ -50,7 +50,7 @@ public abstract class JeneralCarrierUnit {
      * @param capacity the capacity
      */
     public JeneralCarrierUnit(int capacity) {
-        this.units = new HashSet<JeneralUnit>();
+        this.units = new HashSet<>();
         this.capacity = capacity;
     }
 

@@ -52,17 +52,17 @@ public class TestTurns extends MainTestClass implements UnitMovedListener,
     /**
      * The buggy.
      */
-    private JeneralLandUnit buggy;
+    private final JeneralLandUnit buggy;
 
     /**
      * The jet.
      */
-    private JeneralAirUnit jet;
+    private final JeneralAirUnit jet;
 
     /**
      * The truck.
      */
-    private JeneralLandUnit truck;
+    private final JeneralLandUnit truck;
 
     /**
      * Instantiates a new test turns.

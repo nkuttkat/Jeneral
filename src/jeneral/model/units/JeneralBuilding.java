@@ -82,7 +82,7 @@ public class JeneralBuilding extends JeneralGroundUnit {
     public JeneralBuilding(AbstractGame game, AbstractMobilityRole mobilityRole, AbstractPlayer player,
             int health, JeneralWeapon weapon, JeneralCarrierUnit cu) {
         super(game, mobilityRole, player, health, 0, weapon, cu);
-        this.parts = new HashSet<JeneralBuilding>();
+        this.parts = new HashSet<>();
     }
 
     /**
