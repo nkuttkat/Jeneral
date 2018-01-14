@@ -355,7 +355,8 @@ public class TestMapBuilder {
         scrollPane = new JScrollPane();
         splitPane.setLeftComponent(scrollPane);
 
-        gameMapView = new GameMapView(gameMap, new GameFieldViewListener());
+        gameMapView = new GameMapView(gameMap);
+        gameMapView.addMouseListener(new GameFieldViewListener());
         scrollPane.setViewportView(gameMapView);
 
         popupMenu = new JPopupMenu();
@@ -452,7 +453,8 @@ public class TestMapBuilder {
             fileInputStream = new FileInputStream(fileName);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             this.gameMap = (JeneralGameMap) objectInputStream.readObject();
-            gameMapView = new GameMapView(this.gameMap, new GameFieldViewListener());
+            gameMapView = new GameMapView(this.gameMap);
+            gameMapView.addMouseListener(new GameFieldViewListener());
             scrollPane.setViewportView(gameMapView);
             objectInputStream.close();
         } catch (Exception e) {

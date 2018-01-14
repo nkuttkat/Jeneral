@@ -27,6 +27,7 @@ import jeneral.model.map.JeneralGameField;
 import jeneral.model.map.JeneralTerrain;
 
 import abstractgame.view.SquareView;
+import java.io.IOException;
 
 /**
  * The Class GameFieldView.
@@ -41,13 +42,9 @@ public class GameFieldView extends SquareView {
      * Instantiates a new game field view.
      *
      * @param model the model
-     * @param fieldSize the field size
-     * @param listener the listener
      */
-    public GameFieldView(JeneralGameField model, int fieldSize,
-            MouseListener listener) {
-        super(model, fieldSize);
-        this.initialize(listener);
+    public GameFieldView(JeneralGameField model) {
+        super(model);
     }
 
     /**
@@ -80,7 +77,7 @@ public class GameFieldView extends SquareView {
                     image = ImageIO.read(new File("pics/rough.png"));
                     break;
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -90,16 +87,17 @@ public class GameFieldView extends SquareView {
     /**
      * Initialize.
      *
-     * @param listener the listener
      */
-    public void initialize(MouseListener listener) {
-        this.addMouseListener(listener);
+    @Override
+    public void initialize(int sideLength) {
+        super.initialize(sideLength);
         this.showBorder(true);
         BufferedImage image = new BufferedImage(this.getWidth(),
                 this.getHeight(), BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = image.createGraphics();
         g.setColor(this.getForeground());
         g.fill(this.getShape());
+        g.dispose();
     }
 
     /* (non-Javadoc)

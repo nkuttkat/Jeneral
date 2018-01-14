@@ -100,7 +100,8 @@ public class MainTestClass implements MouseListener {
         player = new JeneralPlayer("nils", game);
         player1 = new JeneralPlayer("dödelbert", game);
         this.initTestMap();
-        mapView = new GameMapView(map, this);
+        mapView = new GameMapView(map);
+        mapView.initialize(null);
 
         frame.setBounds(0, 0, 1000, 740);
         scrollpane.setViewportView(mapView);
@@ -118,7 +119,7 @@ public class MainTestClass implements MouseListener {
     /**
      * Inits the test map.
      */
-    public void initTestMap() {
+    public final void initTestMap() {
         /* set some fields */
  /*
 		 * map.setField(5, 9, new GameField(Terrain.WATER)); map.setField(5, 8,
